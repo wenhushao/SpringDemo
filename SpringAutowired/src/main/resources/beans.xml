@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="cat" class="net.zeroinfo.pojo.Cat"/>
+    <bean id="dog" class="net.zeroinfo.pojo.Dog"/>
+
+    <!-- byName:会自动在容器上下文查找 和自己对象set方法后面的值对应的beanId   -->
+    <!--    <bean id="person" class="Person" autowire="byName">-->
+    <!--        <property name="name" value="人"/>-->
+    <!--    </bean>-->
+
+    <!-- byType:会自动在容器上下文查找 和自己对象set方法后面的值对应的class   -->
+    <bean id="person" class="net.zeroinfo.pojo.Person" autowire="byType">
+        <property name="name" value="人"/>
+    </bean>
+</beans>

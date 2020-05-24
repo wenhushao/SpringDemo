@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    默认无参构造 -->
+    <!--    <bean id="user" class="Users">-->
+    <!--        <property name="name" value="Hello"/>-->
+    <!--    </bean>-->
+
+    <!--    有参构造：下标赋值 -->
+    <!--    <bean id="user" class="Users">-->
+    <!--        <constructor-arg index="0" value="Hello"/>-->
+    <!--    </bean>-->
+
+    <!--    有参构造：基本类型 -->
+    <!--    <bean id="user" class="Users">-->
+    <!--        <constructor-arg type="java.lang.String" value="Hello"/>-->
+    <!--    </bean>-->
+
+    <bean id="user" class="Users">
+        <constructor-arg name="name" value="Hello"/>
+    </bean>
+
+    <!--    <bean id="userTwo" class="UsersTwo">-->
+    <!--        <property name="nameTwo" value="Hello UsersTwo"/>-->
+    <!--    </bean>-->
+</beans>

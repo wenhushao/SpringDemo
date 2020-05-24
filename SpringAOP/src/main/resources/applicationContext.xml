@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 注册bean -->
+    <bean id="userService" class="service.UserServiceImpl"/>
+    <bean id="log" class="log.Log"/>
+    <bean id="afterLog" class="log.AfterLog"/>
+
+    <!-- 方式一使用原生API -->
+    <!-- 配置AOP:导入aop依赖 -->
+    <!--    <aop:config>-->
+    <!--        &lt;!&ndash; 切入点 expression: 表达式 execution(要执行的位置* * * *) &ndash;&gt;-->
+    <!--        <aop:pointcut id="pointcut" expression="execution(* service.UserServiceImpl.*(..))"/>-->
+    <!--        &lt;!&ndash; 执行环绕增加 &ndash;&gt;-->
+    <!--        <aop:advisor advice-ref="log" pointcut-ref="pointcut"/>-->
+    <!--        <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut"/>-->
+    <!--    </aop:config>-->
+
+    <!-- 方式二：自定义类来实现 -->
+    <!--    <bean id="userDefined" class="defined.UserPointcut"/>-->
+
+    <!--    <aop:config>-->
+    <!--        &lt;!&ndash; 自定义切面  ref 要引用的类&ndash;&gt;-->
+    <!--        <aop:aspect ref="userDefined">-->
+    <!--            &lt;!&ndash; 切入点 &ndash;&gt;-->
+    <!--            <aop:pointcut id="point" expression="execution(* service.UserServiceImpl.*(..))"/>-->
+    <!--            &lt;!&ndash; 通知 &ndash;&gt;-->
+    <!--            <aop:before method="before" pointcut-ref="point"/>-->
+    <!--            <aop:after method="after" pointcut-ref="point"/>-->
+    <!--        </aop:aspect>-->
+    <!--    </aop:config>-->
+
+    <!-- 方式三：使用注解来实现 -->
+    <bean id="annotationPointCut" class="annotation.AnnotationPointCut"/>
+
+    <!-- 开启注解支持 JDK:(默认 proxy-target-class="false"); cglib:(默认 proxy-target-class="true")-->
+    <aop:aspectj-autoproxy proxy-target-class="false"/>
+
+</beans>

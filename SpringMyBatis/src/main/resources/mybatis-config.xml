@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <!-- 实体类别名 -->
+    <typeAliases>
+        <package name="net.zeroinfo.pojo"/>
+    </typeAliases>
+    <!--    &lt;!&ndash; 选择默认的连接方式 &ndash;&gt;-->
+    <!--    <environments default="MySQL57">-->
+    <!--        <environment id="MySQL57">-->
+    <!--            <transactionManager type="JDBC"></transactionManager>-->
+    <!--            <dataSource type="POOLED">-->
+    <!--                <property name="driver" value="com.mysql.jdbc.Driver" />-->
+    <!--                <property name="url"-->
+    <!--                          value="jdbc:mysql://localhost:3306/mybatis?useSSL=true&amp;useUnicode=true&amp;characterEncoding=UTF8" />-->
+    <!--                <property name="username" value="root" />-->
+    <!--                <property name="password" value="201606" />-->
+    <!--            </dataSource>-->
+    <!--        </environment>-->
+    <!--    </environments>-->
+
+    <!--    &lt;!&ndash; 读取Mapper文件 &ndash;&gt;-->
+    <!--    <mappers>-->
+    <!--        <mapper resource="net/zeroinfo/mapper/UsersMapper.xml"/>-->
+    <!--    </mappers>-->
+</configuration>

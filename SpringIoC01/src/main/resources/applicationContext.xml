@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="usersDaoImpl" class="dao.UsersDaoImpl"/>
+    <bean id="usersDaoImpl2" class="dao.UsersDaoImpl2"/>
+    <bean id="usersServiceImpl" class="service.UsersServiceImpl">
+        <!-- ref : 引用Spring中创建好的对象。
+             value : 具体的值，基本数据类型。-->
+        <property name="userDao" ref="usersDaoImpl"/>
+    </bean>
+
+</beans>

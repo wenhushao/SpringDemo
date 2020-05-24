@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="net.zeroinfo.pojo.Address">
+        <property name="address" value="安徽"/>
+    </bean>
+
+    <bean id="student" class="net.zeroinfo.pojo.Student">
+        <!-- 普通注入 -->
+        <property name="name" value="错过"/>
+        <!-- benan注入 ref -->
+        <property name="address" ref="address"/>
+
+        <!-- 数组注入 ref -->
+        <property name="books">
+            <array>
+                <value>西游记</value>
+                <value>红楼梦</value>
+                <value>水浒传</value>
+                <value>三国演义</value>
+            </array>
+        </property>
+
+        <!-- List -->
+        <property name="hobbys">
+            <list>
+                <value>编程</value>
+                <value>写作</value>
+                <value>看书</value>
+                <value>听歌</value>
+                <value>看电影</value>
+            </list>
+        </property>
+
+        <!-- Map -->
+        <property name="card">
+            <map>
+                <entry key="c1" value="001"/>
+                <entry key="c2" value="002"/>
+                <entry key="c3" value="003"/>
+            </map>
+        </property>
+
+
+        <!-- Set -->
+        <property name="games">
+            <set>
+                <value>CF</value>
+                <value>LoL</value>
+            </set>
+        </property>
+
+        <!-- Null -->
+        <property name="wife">
+            <null/>
+        </property>
+
+        <!-- Properties -->
+        <property name="info">
+            <props>
+                <prop key="info01">sales@example.com</prop>
+                <prop key="info02">support@example.co.uk</prop>
+            </props>
+        </property>
+
+    </bean>
+
+</beans>

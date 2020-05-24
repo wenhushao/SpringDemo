@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- P namespace property -->
+    <bean id="users" class="Users" p:name="P name" p:age="20" scope="singleton"/>
+
+
+    <!-- C namespace constructor-arg-->
+    <bean id="usersByC" class="Users" c:name="Cc" c:age="12" scope="prototype"/>
+
+
+</beans>
